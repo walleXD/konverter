@@ -9,3 +9,8 @@ export const substract = payload => ({
   type: test.substract,
   payload
 })
+
+export const asyncAdd = payload => ({
+  type: test.asyncAdd,
+  payload
+})
