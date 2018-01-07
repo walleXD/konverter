@@ -1,0 +1,23 @@
+{
+  "name": "@konverter/web",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "add:pack": "lerna add --scope=@konverter/web",
+    "dev": "next"
+  },
+  "dependencies": {
+    "next": "^4.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-dotenv": "^1.1.2",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "babel-plugin-styled-components": "^1.4.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.2.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
