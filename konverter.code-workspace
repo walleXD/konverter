@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "packages/web"
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"prettier.eslintIntegration": true
+	}
+}
