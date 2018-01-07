@@ -6,11 +6,8 @@
     "prettier/react",
     "prettier/standard"
   ],
-  "plugins": [
-    "react",
-    "prettier",
-    "standard"
-  ],
+  "plugins": ["react", "prettier", "standard"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
