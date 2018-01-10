@@ -15,14 +15,26 @@ export default (initialState = {}, options) => {
     require("redux-immutable-state-invariant").default()
   ]
 
-  const middlewares = [
-    createEpicMiddleware(epics),
-    ...(isDev && devMiddlewares)
-  ]
+  const epicMiddleware = createEpicMiddleware(epics)
+  const middlewares = [epicMiddleware, ...(isDev && devMiddlewares)]
 
-  return createStore(
+  const store = createStore(
     reducers,
     initialState,
     composeWithDevTools(applyMiddleware(...middlewares))
   )
+
+  if (module.hot) {
+    module.hot.accept("../reducers", () => {
+      const nextReducer = require("reducers/index").default
+      store.replaceReducer(nextReducer)
+    })
+
+    module.hot.accept("../epics", () => {
+      const rootEpic = require("epics/index").default
+      epicMiddleware.replaceEpic(rootEpic)
+    })
+  }
+
+  return store
 }
